@@ -11,7 +11,7 @@ INCLUDE =
 LDFLAGS = -lfl
 LDPATH = 
 
-PROGS = ch1-01.exe
+PROGS = ch1-01.exe ch1-02.exe ch1-03.exe
 
 .PHONY: all
 all: $(PROGS)
@@ -26,5 +26,11 @@ clean:
 	$(LEX) -o $@ $<
 
 ch1-01.exe: ch1-01.l.c
+	$(CC) -o $@ $^ $(LDFLAGS) $(LDPATH)
+
+ch1-02.exe: ch1-02.l.c
+	$(CC) -o $@ $^ $(LDFLAGS) $(LDPATH)
+
+ch1-03.exe: ch1-03.l.c
 	$(CC) -o $@ $^ $(LDFLAGS) $(LDPATH)
 
